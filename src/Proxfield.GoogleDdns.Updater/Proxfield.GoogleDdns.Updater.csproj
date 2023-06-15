@@ -11,8 +11,7 @@
     <PackageId>Proxfield.GoogleDdns.Updater</PackageId>
     <Version>1.0.4</Version>
     <PackageTags>Proxfield</PackageTags>
-    <Description>The SQLite Caching Library is layer for caching data on SQLite to be used as a
-            secondary database in case of failures and network inconsistences.</Description>
+    <Description>Service worker that updates the Google DDNS registry from time to time, runs as a Docker standalone service.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/proxfield/Proxfield.GoogleDdns.Updater</PackageProjectUrl>
     <RepositoryUrl>https://github.com/proxfield/Proxfield.GoogleDdns.Updater</RepositoryUrl>
@@ -40,7 +39,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Proxfield.Google.Ddns.Updater.Domain\Proxfield.GoogleDdns.Updater.Domain.csproj" />
-    <ProjectReference Include="..\Proxfield.Google.Ddns.Updater.Service\Proxfield.GoogleDdns.Updater.Service.csproj" />
+    <ProjectReference Include="..\Proxfield.GoogleDdns.Updater.Domain\Proxfield.GoogleDdns.Updater.Domain.csproj" />
+    <ProjectReference Include="..\Proxfield.GoogleDdns.Updater.Service\Proxfield.GoogleDdns.Updater.Service.csproj" />
   </ItemGroup>
 </Project>

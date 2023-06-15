@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Proxfield.Google.Ddns.Updater.Domain\Proxfield.GoogleDdns.Updater.Domain.csproj" />
+    <ProjectReference Include="..\Proxfield.GoogleDdns.Updater.Domain\Proxfield.GoogleDdns.Updater.Domain.csproj" />
   </ItemGroup>
 
 </Project>
