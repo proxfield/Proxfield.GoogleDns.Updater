@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  googleddnsupdater:
+    build: .
+    container_name: "googleddnsupdater"
+    environment:
+      - DdnsSettings__HostName=${HOST_NAME}
+      - DdnsSettings__User=${USER}
+      - DdnsSettings__Password=${PASSWORD}
+      - DdnsSettings__UpdateInterval=${INTERVAL}
+    ports:
+      - "5400:5400"
