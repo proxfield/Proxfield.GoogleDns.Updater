@@ -15,14 +15,45 @@ Then a Dynamic DNS option will be available for you, click on "Manage Dynamic DN
 ![image](https://github.com/proxfield/Proxfield.GoogleDns.Updater/assets/7343019/9a3b27d5-312b-470a-a459-1c35dedc701f)
 
 Please take a note of the:
-* Endpoint/subdomain you've selected (e.g.: lks.proxfield.com)
-* Username (available at the button "View credentials")
-* Password (available at the button "View credentials")
+* Endpoint/subdomain you've selected (e.g.: lks.proxfield.com);
+* Username (available at the button "View credentials");
+* Password (available at the button "View credentials").
 
 ## Running via Docker Composer
 
+There is a file named `secrets.example.env`, copy it to `secrets.env`:
+```bash
+    cp secrets.example.env secrets.env
+```
+Edit the `secrets.env` file with the following data grabbed from the Google Domains:
+
+```ini
+HOST_NAME=
+USER=
+PASSWORD=
+INTERVAL=300
+```
+
+* HOST_NAME: subdomain in which the IP will be bind to;
+* USER: username provided when clicking on "View Credentials"
+* PASSWORD: password provided when clicking on "View Credentials"
+* INTERVAL: given in seconds, stabilishes from what amount of time the worker should update the Google Registry (please do not select a value that is necessary to your application, so not to be banned or something);
+
+Then run the application either using the `up.sh` script or creating the image yourself by running the following commands:
+
+```bash
+docker build -t googleddnsupdater .
+docker tag googleddnsupdater:latest googleddnsupdater:staging
+docker compose --env-file ./secrets.env  up -d
+```
+
+### Checking the logs
+This worker has logging implemented, so we can track what is happening in real time (ish), feel free to use it.
+```bash
+docker logs -f googleddnsupdater
+```
+
 ## Running via DockerHub
+Comming soon
 
-# Under the hood
-
-
+## Under the hood
