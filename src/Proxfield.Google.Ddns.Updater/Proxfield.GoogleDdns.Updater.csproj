@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Proxfield.Google.Ddns.Updater-15d03d56-2920-4225-a61d-8dfaddd64a8c</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+  
+    <Authors>Proxfield</Authors>
+    <PackageIcon>images\company-logo.png</PackageIcon>
+    <PackageIconUrl>https://proxfield.com/public/favicon.png</PackageIconUrl>
+    <PackageId>Proxfield.GoogleDdns.Updater</PackageId>
+    <Version>1.0.4</Version>
+    <PackageTags>Proxfield</PackageTags>
+    <Description>The SQLite Caching Library is layer for caching data on SQLite to be used as a secondary database in case of failures and network inconsistences.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/proxfield/Proxfield.GoogleDdns.Updater</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/proxfield/Proxfield.GoogleDdns.Updater</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Company>Proxfield</Company>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="..\..\docs\images\company-logo.png" Pack="true" Visible="false" PackagePath="images\company-logo.png" />
+        <None Include="..\..\LICENSE.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Proxfield.Google.Ddns.Updater.Domain\Proxfield.GoogleDdns.Updater.Domain.csproj" />
+    <ProjectReference Include="..\Proxfield.Google.Ddns.Updater.Service\Proxfield.GoogleDdns.Updater.Service.csproj" />
+  </ItemGroup>
+</Project>
