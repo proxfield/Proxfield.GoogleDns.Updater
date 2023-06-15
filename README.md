@@ -60,4 +60,6 @@ Comming soon
 
 Using this service to update the Google registry couldn't be applicable to your scenario, this was developed to run on a docker environment we already have; if you need to create your own updater for some reason, here's how it works on a nutshell:
 
-The service sends a request to the following URL: `https://domains.google.com/nic/update?hostname={hostName}`, in which the **hostname** is the subdomain you've created. The credentials are passed either by the URL itself, as in `https://username:password@domains.google.com/nic/update?hostname=subdomain.yourdomain.com&myip=1.2.3.4`, which is not that safe. Also note that it is not necessary to pass your IP address on the **myip** query parameter, it is completely optional, since when not provided it will assume your own IP.
+The service sends a request to the following URL: `https://domains.google.com/nic/update?hostname={hostName}`, in which the **hostname** is the subdomain you've created. 
+
+The credentials are passed either by the URL itself, as in `https://username:password@domains.google.com/nic/update?hostname=subdomain.yourdomain.com&myip=1.2.3.4`, which is not that safe. Also note that it is not necessary to pass your IP address on the **myip** query parameter, it is completely optional, since when not provided it will assume your own IP.
