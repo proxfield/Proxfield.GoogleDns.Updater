@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{092243B3-533
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{440F87C4-B016-4F27-9148-23BEC2BE286F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxfield.GoogleDdns.Domain.Tests", "tests\Proxfield.GoogleDdns.Domain.Tests\Proxfield.GoogleDdns.Domain.Tests\Proxfield.GoogleDdns.Domain.Tests.csproj", "{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3C2B5CFF-06F9-40F0-9C3D-4C4567119C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C2B5CFF-06F9-40F0-9C3D-4C4567119C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C2B5CFF-06F9-40F0-9C3D-4C4567119C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{7449966E-061E-43D3-93AE-5A67CDA88A6C} = {092243B3-5337-40CA-81BA-C00A5F2E9155}
 		{6A99AE69-DE07-4624-9341-A12E7141A74E} = {092243B3-5337-40CA-81BA-C00A5F2E9155}
 		{3C2B5CFF-06F9-40F0-9C3D-4C4567119C78} = {092243B3-5337-40CA-81BA-C00A5F2E9155}
+		{BEDCDCF0-6924-4E36-AD0D-F2FBC7E98260} = {440F87C4-B016-4F27-9148-23BEC2BE286F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82679EFB-6BEE-4AE8-9C15-23CABD7B8528}
