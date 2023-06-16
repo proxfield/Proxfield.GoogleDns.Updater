@@ -1,7 +1,7 @@
-﻿namespace Proxfield.GoogleDdns.Updater.Service.Interfaces
+namespace Proxfield.GoogleDdns.Updater.Service.Interfaces
 {
     public interface IDdnsUpdateService
     {
-        Task UpdateDdnsRegistry();
+        Task UpdateDdnsRegistry(CancellationToken cancellationToken);
     }
 }

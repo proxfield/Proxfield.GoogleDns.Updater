@@ -1,6 +1,8 @@
-﻿using Proxfield.Google.Ddns.Updater.Domain;
+using FluentValidation;
+using Proxfield.GoogleDdns.Updater.Domain.Models;
 using Proxfield.GoogleDdns.Updater.Service.Implementation;
 using Proxfield.GoogleDdns.Updater.Service.Interfaces;
+using Proxfield.GoogleDdns.Updater.Validators;
 
 namespace Proxfield.GoogleDdns.Updater.Configuration
 {
@@ -11,6 +13,7 @@ namespace Proxfield.GoogleDdns.Updater.Configuration
             var ddnsSettings = configuration.GetSection(nameof(DdnsSettings)).Get<DdnsSettings>();
             services.AddSingleton(ddnsSettings);
 
+            services.AddSingleton<IValidator<DdnsSettings>, DdnsValidator>();
             services.AddSingleton<IDdnsUpdateService, DdnsUpdateService>();
 
             return services;

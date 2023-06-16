@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  db:
+    image: proxfield/proxfieldgoogleddnsupdater
+    restart: always
+    environment:
+      - DdnsSettings__Host__0__Endpoint=
+      - DdnsSettings__Host__0__User=
+      - DdnsSettings__Host__0__Password=
+      - DdnsSettings__Host__0__OverrideIp=
+      - DdnsSettings__UpdateInterval=3000
+      - DdnsSettings__MaxParallelExecutions=10
+    expose:
+      - 5432

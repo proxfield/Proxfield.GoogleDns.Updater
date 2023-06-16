@@ -8,7 +8,7 @@
     <Authors>Proxfield</Authors>
     <PackageIcon>images\company-logo.png</PackageIcon>
     <PackageIconUrl>https://proxfield.com/public/favicon.png</PackageIconUrl>
-    <PackageId>Proxfield.GoogleDdns.Updater</PackageId>
+    <PackageId>GoogleDdnsUpdater</PackageId>
     <Version>1.0.4</Version>
     <PackageTags>Proxfield</PackageTags>
     <Description>Service worker that updates the Google DDNS registry from time to time, runs as a Docker standalone service.</Description>

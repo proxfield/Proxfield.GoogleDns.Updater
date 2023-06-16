@@ -1,7 +1,7 @@
-﻿using Flurl.Http;
+using Flurl.Http;
 using Microsoft.Extensions.Logging;
-using Proxfield.Google.Ddns.Updater.Domain;
 using Proxfield.GoogleDdns.Updater.Domain.Extensions;
+using Proxfield.GoogleDdns.Updater.Domain.Models;
 using Proxfield.GoogleDdns.Updater.Service.Interfaces;
 
 namespace Proxfield.GoogleDdns.Updater.Service.Implementation
@@ -10,6 +10,7 @@ namespace Proxfield.GoogleDdns.Updater.Service.Implementation
     {
         private readonly ILogger<IDdnsUpdateService> _logger;
         private readonly DdnsSettings _ddnsSettings;
+
         public DdnsUpdateService(ILogger<IDdnsUpdateService> logger,
             DdnsSettings ddnsSettings)
         {
@@ -17,18 +18,25 @@ namespace Proxfield.GoogleDdns.Updater.Service.Implementation
             _ddnsSettings= ddnsSettings;
         }
 
-        public async Task UpdateDdnsRegistry()
-        {
+        public async Task UpdateDdnsRegistry(CancellationToken cancellationToken)
+        { 
             try
             {
-                var result =
-                     await _ddnsSettings.HostName
-                     .ToGoogleNicUrl()
-                     .WithBasicAuth(_ddnsSettings.User, _ddnsSettings.Password)
+                var options = new ParallelOptions()
+                {
+                    MaxDegreeOfParallelism = _ddnsSettings.MaxParallelExecutions
+                };
+
+                await Parallel.ForEachAsync(_ddnsSettings.Hosts, options, async (host, _) => {
+                    var result =
+                     await host.Endpoint
+                     .ToGoogleNicUrl(host.OverrideIp)
+                     .WithBasicAuth(host.User, host.Password)
                      .GetStringAsync();
 
-                if (result.IsGoodResponse() || result.IsNoChangeResponse())
-                    _logger.LogInformation("DDNS records updated sucessfully to {}", result.GetChangedIpAddress());
+                    if (result.IsGoodResponse() || result.IsNoChangeResponse())
+                        _logger.LogInformation("DDNS records updated sucessfully to {}", result.GetChangedIpAddress());
+                });               
 
                 _logger.LogInformation("Next update is going to be made in {} seconds", _ddnsSettings.UpdateInterval);
             }
