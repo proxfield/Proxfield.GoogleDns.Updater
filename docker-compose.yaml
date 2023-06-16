@@ -5,10 +5,10 @@ services:
     build: .
     container_name: "googleddnsupdater"
     environment:
-      - DdnsSettings__Host__0__Endpoint=${HOST_NAME}
-      - DdnsSettings__Host__0__User=${USER}
-      - DdnsSettings__Host__0__Password=${PASSWORD}
-      - DdnsSettings__Host__0__OverrideIp=${OVERRIDE_IP}
+      - DdnsSettings__Hosts__0__Endpoint=${HOST_NAME}
+      - DdnsSettings__Hosts__0__User=${USER}
+      - DdnsSettings__Hosts__0__Password=${PASSWORD}
+      - DdnsSettings__Hosts__0__OverrideIp=${OVERRIDE_IP}
       - DdnsSettings__UpdateInterval=${UPDATE_INTERVAL}
       - DdnsSettings__MaxParallelExecutions=${MAX_PARALLEL_EXECUTIONS}
     ports:
