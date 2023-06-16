@@ -1,6 +1,15 @@
 # Proxfield.GoogleDns.Updater
 Service worker that updates the Google DDNS registry from time to time, runs as a Docker standalone service.
 
+![GitHub License](https://img.shields.io/github/license/proxfield/Proxfield.GoogleDns.Updater)
+![Actions](https://github.com/proxfield/Proxfield.GoogleDns.Updater/actions/workflows/dotnet.yml/badge.svg)
+[![Docker](https://github.com/proxfield/Proxfield.GoogleDns.Updater/actions/workflows/docker-image.yml/badge.svg)](https://github.com/proxfield/Proxfield.GoogleDns.Updater/actions/workflows/docker-image.yml)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/proxfield/Proxfield.GoogleDns.Updater/main)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/proxfield/Proxfield.GoogleDns.Updater)
+![Docker stars](https://img.shields.io/docker/stars/proxfield/proxfieldgoogleddnsupdater)
+![Docker stars](https://img.shields.io/docker/image-size/proxfield/proxfieldgoogleddnsupdater)
+
+
 ## Google DDNS Service
 Google provides to anyone who has a domain within the [domains.google](domains.google) to create subdomains and associate them to any publuc IP address via DDNS, the main differente to usual DNS is that we can easily update the IP in which the subdomain points to. That's a great thing for people and companies who don't yet have a "static" public IP Address.
 
