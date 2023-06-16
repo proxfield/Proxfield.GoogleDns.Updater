@@ -36,10 +36,10 @@ services:
     image: proxfield/proxfieldgoogleddnsupdater
     restart: always
     environment:
-      - DdnsSettings__Host__0__Endpoint=
-      - DdnsSettings__Host__0__User=
-      - DdnsSettings__Host__0__Password=
-      - DdnsSettings__Host__0__OverrideIp=
+      - DdnsSettings__Hosts__0__Endpoint=
+      - DdnsSettings__Hosts__0__User=
+      - DdnsSettings__Hosts__0__Password=
+      - DdnsSettings__Hosts__0__OverrideIp=
       - DdnsSettings__UpdateInterval=3000
       - DdnsSettings__MaxParallelExecutions=10
     expose:
