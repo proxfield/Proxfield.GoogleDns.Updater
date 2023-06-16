@@ -32,18 +32,17 @@ The `docker-compose.yaml` should look a little something like the following:
 ```yaml
 version: "3.4"
 services:
-  db:
-    image: proxfield/proxfieldgoogleddnsupdater
-    restart: always
-    environment:
-      - DdnsSettings__Hosts__0__Endpoint=
-      - DdnsSettings__Hosts__0__User=
-      - DdnsSettings__Hosts__0__Password=
-      - DdnsSettings__Hosts__0__OverrideIp=
-      - DdnsSettings__UpdateInterval=3000
-      - DdnsSettings__MaxParallelExecutions=10
-    expose:
-      - 5432
+    googleddns:
+      environment:
+         - 'DdnsSettings__Hosts__0__Endpoint=${DDNS_ENDPOINT}'
+         - 'DdnsSettings__Hosts__0__User=${DDNS_USER}'
+         - 'DdnsSettings__Hosts__0__Password=${DDNS_PASSWORD}'
+         - 'DdnsSettings__Hosts__0__OverrideIp=${DDNS_OVERRIDE_IP}'
+         - 'DdnsSettings__UpdateInterval=${DDNS_UPDATE_INTERVAL}'
+         - 'DdnsSettings__MaxParallelExecutions=${DDNS_MAX_PARALLEL_EXECUTIONS}'
+      image: proxfield/proxfieldgoogleddnsupdater
+      restart: unless-stopped
+      container_name: googleddns
 ```
 
 * **Endpoint**: subdomain in which the IP will be bind to;
